@@ -1,0 +1,5 @@
+#!/bin/sh
+
+stamp_file=/var/run/wmppp.$PPP_IFACE
+
+[ -f $stamp_file ] && rm $stamp_file

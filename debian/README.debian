@@ -1,0 +1,15 @@
+wmppp.app for DEBIAN
+--------------------
+
+This is Debian GNU/Linux's prepackaged version of wmppp.app, a load
+monitor tool for your PPP connection. It's designed with the NeXTStep
+look in mind.
+
+wmppp installs /etc/ppp/ip-up.d/00wmppp and /etc/ppp/ip-down.d/00wmppp.
+These files are necessary for the proper operation of wmppp. The first
+one touches /var/run/wmppp.$PPP_IFACE and the other one removes
+it. When wmppp finds the file, it will display the online indicator,
+and will use its modification time to calculate the enlapsed time
+since the connection came up.
+
+Marcelo E. Magallon <mmagallo@debian.org>, Wed,  1 May 1998 09:11:00 -0600

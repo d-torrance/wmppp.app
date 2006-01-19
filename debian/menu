@@ -1,0 +1,4 @@
+?package(wmppp.app):needs="x11" \
+	section="Apps/Net" \
+	title="WMppp" \
+	command="/usr/bin/wmppp"

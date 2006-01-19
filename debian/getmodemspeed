@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# this is an example getmodemspeed script
+# I add '-r /var/tmp/modem.speed' to the 'connect' line in
+# /etc/ppp/peers/provider and a 'REPORT CONNECT' line to
+# /etc/chatscripts/provider. From my USR modem I get something like this:
+#
+# Opening "/var/tmp/modem.speed"...
+# chat:  Sep 20 07:34:42 CONNECT nnnnn/ARQ/V32/LAPM/V42BIS
+# Closing "/var/tmp/modem.speed".
+#
+# I'm interested in the "nnnnn" part. The following works for me, but YMMV
+
+grep CONNECT /var/tmp/modem.speed | \
+	tail -1 | \
+	sed -e 's,^.*CONNECT[[:blank:]]*\([[:digit:]]*\).*$,\1,'
+
+exit 0

@@ -1,0 +1,20 @@
+Source: wmppp.app
+Section: net
+Priority: optional
+Maintainer: Chris Waters <xtifr@debian.org>
+Standards-Version: 3.6.2
+Build-Depends:  libx11-dev, libxext-dev, libxpm-dev, debhelper (>= 4.0.0)
+
+Package: wmppp.app
+Architecture: any
+Section: net
+Priority: optional
+Depends: ppp, ${shlibs:Depends}
+Suggests: wmaker
+Description: PPP dial control and network load monitor with NeXTStep look
+ wmppp.app provides a PPP activator and network load monitor on a 64x64 mini
+ window.  With wmppp you can monitor the total traffic as well as the outbound
+ and inbound traffic.  It is designed to work with the WindowMaker dock, but
+ will work great with other window managers as well.
+ .
+ Now with experimental ippp device support.
