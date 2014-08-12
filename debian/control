@@ -4,6 +4,9 @@ Priority: optional
 Maintainer: Doug Torrance <dtorrance@monmouthcollege.edu>
 Standards-Version: 3.9.5
 Build-Depends:  debhelper (>= 9), libx11-dev, libxext-dev, libxpm-dev
+Homepage: http://windowmaker.org/dockapps/?name=wmppp.app
+Vcs-Browser: https://github.com/d-torrance/wmppp.app
+Vcs-Git: https://github.com/d-torrance/wmppp.app.git
 
 Package: wmppp.app
 Architecture: any
