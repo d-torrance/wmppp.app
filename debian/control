@@ -1,7 +1,7 @@
 Source: wmppp.app
 Section: net
 Priority: optional
-Maintainer: Chris Waters <xtifr@debian.org>
+Maintainer: Doug Torrance <dtorrance@monmouthcollege.edu>
 Standards-Version: 3.6.2
 Build-Depends:  libx11-dev, libxext-dev, libxpm-dev, debhelper (>= 4.0.0)
 
