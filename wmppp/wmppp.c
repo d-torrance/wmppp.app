@@ -187,12 +187,12 @@
  /* Defines */
 /***********/
 
-#define START_ACTION "/usr/bin/pon"
-#define STOP_ACTION "/usr/bin/poff"
+#define START_ACTION (NULL)
+#define STOP_ACTION (NULL)
 #define SPEED_ACTION (NULL)
-#define IFDOWN_ACTION "/usr/bin/poff -r"
+#define IFDOWN_ACTION (NULL)
 
-#define STAMP_FILE_PRE "/var/run/wmppp."
+#define STAMP_FILE "/var/run/ppp0.pid"
 
 /* Defines voor alle coordinate */
 
@@ -310,15 +310,10 @@ int main(int argc, char *argv[]) {
 					usage();
 					exit(1);
 				}
-				/* following removed to allow experiments with
-				 * new devices, i.e. ippp
-				 */
-#if 0
 				if (strncmp(argv[i+1], "ppp", 3)) {
 					usage();
 					exit(1);
 				}
-#endif
 				active_interface = argv[i+1];
 				i++;
 				break;
@@ -362,7 +357,6 @@ char	*start_action = NULL;
 char	*stop_action = NULL;
 char	*speed_action = NULL;
 char	*ifdown_action = NULL;
-char    *stamp_file = NULL;
 
 void wmppp_routine(int argc, char **argv) {
 
@@ -371,7 +365,6 @@ void wmppp_routine(int argc, char **argv) {
 		{ "stop", &stop_action },
 		{ "speed", &speed_action },
 		{ "ifdown", &ifdown_action },
-		{ "stampfile", &stamp_file },
 		{ NULL, NULL }
 	};
 
@@ -413,10 +406,6 @@ void wmppp_routine(int argc, char **argv) {
 	if (STOP_ACTION) stop_action = strdup(STOP_ACTION);
 	if (SPEED_ACTION) speed_action = strdup(SPEED_ACTION);
 	if (IFDOWN_ACTION) ifdown_action = strdup(IFDOWN_ACTION);
-	if (STAMP_FILE_PRE) {
-	    sprintf (temp, "%s%s", STAMP_FILE_PRE, active_interface);
-	    stamp_file = strdup (temp);
-	}
 	
 	strcpy(temp, "/etc/wmppprc");
 	parse_rcfile(temp, wmppp_keys);
@@ -426,7 +415,7 @@ void wmppp_routine(int argc, char **argv) {
 	strcat(temp, "/.wmppprc");
 	parse_rcfile(temp, wmppp_keys);
 
-	strcpy(temp, "/etc/wmppprc.fixed");
+	strcpy(temp, "/etc/wmppp.fixed");
 	parse_rcfile(temp, wmppp_keys);
 
 	/* Open the display */
@@ -489,7 +478,7 @@ void wmppp_routine(int argc, char **argv) {
 				if (!starttime) {
 					starttime = currenttime;
 
-					if (stat(stamp_file, &st) == 0)
+					if (stat(STAMP_FILE, &st) == 0)
 						starttime = st.st_mtime;
 
 					SetOnLED(LED_PPP_POWER);
@@ -770,11 +759,6 @@ void DrawStats(int *his, int num, int size, int x_left, int y_bottom) {
 void PrintLittle(int i, int *k) {
 
 	switch (i) {
-	case -2:
-		*k -= 5;
-		/* Print the "k" letter */
-		copyXPMArea(11*5-5, 86, 4, 9, *k, 48);
-		break;
 	case -1:
 		*k -= 5;
 		copyXPMArea(13*5-5, 86, 4, 9, *k, 48);
@@ -807,12 +791,9 @@ void DrawSpeedInd(char *speed_action) {
 
 		pclose(fp);
 
-#if 0
 		if ((p=strstr(temp, "CONNECT"))) {
 			linespeed = atoi(p + 8);
 		}
-#endif
-		linespeed = atoi(temp);
 
 		k = 30;
 
@@ -842,13 +823,6 @@ void DrawLoadInd(int speed) {
 	for (i=0; i<5; i++) PrintLittle(-1, &k);
 
 	k = 30;
-
-	/* If speed is greater than 99999, display it in K */
-	if (speed > 99999 )
-	{
-		speed /= 1024 ;
-		PrintLittle(-2, &k) ;
-	}
 
 	do {
 		PrintLittle(speed % 10, &k);
