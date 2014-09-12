@@ -1,0 +1,25 @@
+Description: Get number from getmodemspeed.
+ From debian/changelog for version 1.3.0-1:
+ .
+ Patched wmppp/wmppp.c to expect a NUMBER from getmodemspeed, and not the
+ whole connect line.
+ .
+ Converted to quilt for version 1.3.0+20120605-1.
+Author: Marcelo E. Magallon <mmagallo@debian.org>
+Last-Update: 2014-09-11
+
+--- a/wmppp/wmppp.c
++++ b/wmppp/wmppp.c
+@@ -791,9 +791,12 @@
+ 
+ 		pclose(fp);
+ 
++#if 0
+ 		if ((p=strstr(temp, "CONNECT"))) {
+ 			linespeed = atoi(p + 8);
+ 		}
++#endif
++		linespeed = atoi(temp);
+ 
+ 		k = 30;
+ 

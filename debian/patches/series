@@ -1,1 +1,7 @@
+hardcode_actions.patch
+rename_fixed_options.patch
+get_number_from_getmodemspeed.patch
+allow_isdn_devices.patch
+stampfile_handling.patch
+display_speed_in_k.patch
 use_rm_-f_for_make_clean.patch

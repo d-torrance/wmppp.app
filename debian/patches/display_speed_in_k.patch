@@ -1,0 +1,40 @@
+Description: Display speed in K when too high
+ When the download speed is too high, wmppp can't display it because it has
+ only 5 digit. The most significant digits are hidden !
+ .
+ This small patch display the speed in K when it is too high.
+ .
+ Originally appeared in version 1.3.0-8.  Converted to quilt for version
+ 1.3.0+20120605-1.
+Author: jguiton <jguiton@free.fr>
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=328699
+Last-Update: 2014-09-11
+
+--- a/wmppp/wmppp.c
++++ b/wmppp/wmppp.c
+@@ -770,6 +770,11 @@
+ void PrintLittle(int i, int *k) {
+ 
+ 	switch (i) {
++	case -2:
++		*k -= 5;
++		/* Print the "k" letter */
++		copyXPMArea(11*5-5, 86, 4, 9, *k, 48);
++		break;
+ 	case -1:
+ 		*k -= 5;
+ 		copyXPMArea(13*5-5, 86, 4, 9, *k, 48);
+@@ -838,6 +843,13 @@
+ 
+ 	k = 30;
+ 
++	/* If speed is greater than 99999, display it in K */
++	if (speed > 99999 )
++	{
++		speed /= 1024 ;
++		PrintLittle(-2, &k) ;
++	}
++
+ 	do {
+ 		PrintLittle(speed % 10, &k);
+ 		speed /= 10;
