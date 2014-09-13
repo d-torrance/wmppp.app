@@ -12,7 +12,7 @@ Package: wmppp.app
 Architecture: any
 Section: net
 Priority: optional
-Depends: ppp, ${shlibs:Depends}
+Depends: ppp, ${shlibs:Depends}, ${misc:Depends}
 Suggests: wmaker
 Description: PPP dial control and network load monitor w/ NeXTStep look
  wmppp.app provides a PPP activator and network load monitor on a 64x64 mini
