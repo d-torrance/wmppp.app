@@ -14,7 +14,7 @@ Section: net
 Priority: optional
 Depends: ppp, ${shlibs:Depends}
 Suggests: wmaker
-Description: PPP dial control and network load monitor with NeXTStep look
+Description: PPP dial control and network load monitor w/ NeXTStep look
  wmppp.app provides a PPP activator and network load monitor on a 64x64 mini
  window.  With wmppp you can monitor the total traffic as well as the outbound
  and inbound traffic.  It is designed to work with the WindowMaker dock, but
