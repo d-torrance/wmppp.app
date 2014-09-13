@@ -1,51 +1,11 @@
 #!/usr/bin/make -f
 
-DSTDIR = debian/wmppp.app
+%:
+	dh $@ --sourcedirectory=wmppp
 
-build: build-stamp
+override_dh_auto_install:
+	install -m 755 wmppp/wmppp \
+		$(CURDIR)/debian/wmppp.app/usr/bin/wmppp
 
-build-stamp:
-	dh_testdir
-	cd wmppp && $(MAKE)
-	touch build-stamp
-
-clean:
-	dh_testdir
-	dh_testroot
-	-cd wmppp && $(MAKE) clean
-	-rm -f build-stamp debian/conffiles
-	dh_clean
-
-# Build architecture-independent files here.
-binary-indep: build
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
-	install -s -m 755 wmppp/wmppp $(DSTDIR)/usr/bin/wmppp
-	install -m 755 debian/ip-up $(DSTDIR)/etc/ppp/ip-up.d/00wmppp
-	install -m 755 debian/ip-down $(DSTDIR)/etc/ppp/ip-down.d/00wmppp
-	dh_installdocs
-	dh_installexamples
-	dh_installmenu
-	dh_installman debian/wmppp.1
-	dh_installchangelogs CHANGES
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-source diff:                                                                  
-	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
-
-binary: binary-indep binary-arch
-ok: binary
-.PHONY: build clean binary-indep binary-arch binary ok
+override_dh_installppp:
+	dh_installppp --name=00wmppp
