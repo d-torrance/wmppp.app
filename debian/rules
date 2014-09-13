@@ -9,3 +9,11 @@ override_dh_auto_install:
 
 override_dh_installppp:
 	dh_installppp --name=00wmppp
+
+get-orig-source:
+	uscan --verbose --force-download
+	@if test -e ../wmppp.app-*.download ; then \
+		rename -fv "s/wmppp.app-(.+)\.download/wmppp.app_\1\.orig\.tar\.gz/" \
+			../wmppp.app-*.download; \
+	fi
+
