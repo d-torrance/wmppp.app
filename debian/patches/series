@@ -5,3 +5,4 @@ allow_isdn_devices.patch
 stampfile_handling.patch
 display_speed_in_k.patch
 use_rm_-f_for_make_clean.patch
+hardening_flags.patch
