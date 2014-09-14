@@ -1,16 +1,43 @@
 wmppp.app (1.3.0+20120605-1) UNRELEASED; urgency=medium
 
   * New maintainer (Closes: #664097).
+  * debian/00wmppp.ppp.ip-*
+    - Rename from debian/ip-* for use by dh_installppp (Closes: #212832).
   * debian/compat
     - Bump to 9.
   * debian/control
-    - Bump Standards-Version to 3.9.5, no changes required.
+    - Bump Standards-Version to 3.9.5.
     - Increase debhelper Build-Depends to >=9.
     - Add Homepage and Vcs-* fields.
+    - Shorten single line synopsis.
+    - Add ${misc:Depends} to Depends.
+    - Remove redundant Section and Priority fields.
+    - Convert double space after colon in Build-Depends to single space.
   * debian/copyright
     - Update to machine-readable format version 1.0.
+  * debian/dirs
+    - Remove unnecessary file.
+  * debian/install
+    - New file.
+    - Binary no longer stripped when nostrip option used (Closes: #438275).
+  * debian/manpages
+    - New file.
+  * debian/menu
+    - Update section.
+  * debian/patches
+    - Convert previous patches to quilt.
+    - (get_number_from_getmodemspeed.patch) Edit to avoid unused variable
+      compiler warning.
+    - (hardening_flags.patch) Use hardening build flags.
+    - (usr_rm_-f_for_make_clean.patch) Prevent make clean from failing when
+      source tree is already clean.
+  * debian/rules
+    - Update to use dh.
+    - Add get-orig-source target.
   * debian/source/format
     - New file; use quilt (3.0).
+  * debian/watch
+    - New file.
 
  -- Doug Torrance <dtorrance@monmouthcollege.edu>  Tue, 12 Aug 2014 11:05:33 -0500
 
