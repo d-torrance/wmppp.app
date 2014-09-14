@@ -43,58 +43,58 @@ wmppp.app (1.3.0+20120605-1) UNRELEASED; urgency=medium
 
 wmppp.app (1.3.0-8) unstable; urgency=low
 
-  * Updated build-dependencies for xlibs split (closes: #346983).
-  * Accepted patch from jguiton to display very high speeds with a "k"
-    suffix (closes: #328699).
+  * Update build-dependencies for xlibs split (Closes: #346983).
+  * Add patch from jguiton to display very high speeds with a "k" suffix
+    (Closes: #328699).
 
  -- Chris Waters <xtifr@debian.org>  Wed, 18 Jan 2006 16:00:09 -0800
 
 wmppp.app (1.3.0-7) unstable; urgency=low
 
-  * Updated for newer standards.
+  * Update for newer standards.
 
  -- Chris Waters <xtifr@debian.org>  Thu, 22 May 2003 21:15:37 -0700
 
 wmppp.app (1.3.0-6) unstable; urgency=low
 
-  * Re-added patches that got dropped on the floor when I switched to
+  * Re-add patches that got dropped on the floor when I switched to
     using CVS, including the all-important patch to use pon/poff by
-    default (closes:#138939).
+    default (Closes:#138939).
 
  -- Chris Waters <xtifr@debian.org>  Mon, 18 Mar 2002 13:26:54 -0800
 
 wmppp.app (1.3.0-5) unstable; urgency=low
 
-  * Added some patches by Juan Cespedes <cespedes@debian.org> which may
-    allow ISDN devices to be used.  Also included Juan's patches for
-    stampfile handling.  (closes:#97509)
+  * Add some patches by Juan Cespedes <cespedes@debian.org> which may
+    allow ISDN devices to be used.  Also include Juan's patches for
+    stampfile handling (Closes:#97509).
 
  -- Chris Waters <xtifr@debian.org>  Fri, 15 Mar 2002 19:17:41 -0800
 
 wmppp.app (1.3.0-4) unstable; urgency=low
 
-  * Added missing dependency on ppp (bad, bad, bad!)
+  * Add missing dependency on ppp.
 
  -- Chris Waters <xtifr@debian.org>  Mon, 16 Apr 2001 23:46:15 -0700
 
 wmppp.app (1.3.0-3) unstable; urgency=low
 
-  * Fixed build-dependency on obsolete xpm4g-dev package (closes:#92683)
-  * Rebuilt against XFree86-4.
-  * Moved binary and man page out of X11R6 tree, as per new policy.
-  * Changed debian/rules to use the new dh_installman, and therefore added
+  * Fix build-dependency on obsolete xpm4g-dev package (Closes:#92683).
+  * Rebuild against XFree86-4.
+  * Move binary and man page out of X11R6 tree, as per new policy.
+  * Change debian/rules to use the new dh_installman, and therefore added
     versioned build-depends on debhelper.
 
  -- Chris Waters <xtifr@debian.org>  Sun,  8 Apr 2001 12:49:13 -0700
 
 wmppp.app (1.3.0-2) unstable; urgency=low
 
-  * new maintainer (closes: #76961)
-  * corrected directories mentioned in README.Debian (closes: #72928)
-  * recompiled (again) against modern xpm4g package (closes: #67955)
-  * updated file locations for FHS-compatibility.
-  * updated standards-version in debian/control.
-  * brought the man page up-to-date, adding new options and correcting
+  * New maintainer (Closes: #76961).
+  * Correct directories mentioned in README.Debian (Closes: #72928).
+  * Recompile (again) against modern xpm4g package (Closes: #67955).
+  * Update file locations for FHS compatibility.
+  * Update Standards-Version in debian/control.
+  * Bring the man page up-to-date, adding new options and correcting
     a few minor details here and there.
 
  -- Chris Waters <xtifr@debian.org>  Tue, 14 Nov 2000 00:24:57 -0800
@@ -105,49 +105,48 @@ wmppp.app (1.3.0-1.1) unstable; urgency=low
   * Recompile against modern xpm4g package to get proper shared library
     dependency and permit this package to be installed with forthcoming
     XFree86 4.x packages, which include libXpm.
-  * debian/control: added Build-Depends
+  * debian/control: add Build-Depends.
 
  -- Branden Robinson <branden@debian.org>  Mon, 23 Oct 2000 14:59:01 -0500
 
 wmppp.app (1.3.0-1) unstable; urgency=low
 
-  * New upstream release
-  * Some patches from 1.2 incorporated upstream
-  * Patched wmppp/wmppp.c to expect a NUMBER from getmodemspeed, and not
-    the whole connect line
-  * Modified debian/rules to cope with new source layout
+  * New upstream release.
+  * Some patches from 1.2 incorporated upstream.
+  * Patch wmppp/wmppp.c to expect a NUMBER from getmodemspeed, and not
+    the whole connect line.
+  * Modify debian/rules to cope with new source layout.
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Sun, 20 Sep 1998 12:41:40 -0600
 
 wmppp.app (1.2p1-1) unstable; urgency=low
 
-  * New upstream version
-  * Redid the patch to parse configuration files.
+  * New upstream version.
+  * Redo the patch to parse configuration files.
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Sat,  2 May 1998 17:08:52 -0600
 
 wmppp.app (1.2-1) unstable; urgency=low
 
-  * New upstream version
-  * Some of the patches to 1.1 incorportated upstream
-  * Modified wmppp a bit to make it work with Debian PPP scripts.
-  * Wrote real manpages for wmppp and wmifs
-  * Modified configuration file parsing to make it more flexible and less
-    dictatorial (sent upstream)
+  * New upstream version.
+  * Some of the patches to 1.1 incorportated upstream.
+  * Modify wmppp a bit to make it work with Debian PPP scripts.
+  * Write real manpages for wmppp and wmifs.
+  * Modify configuration file parsing to make it more flexible and less
+    dictatorial (sent upstream).
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Fri,  1 May 1998 20:28:43 -0600
 
 wmppp.app (1.1-1) unstable; urgency=low
 
   * Initial release
-  * Modified to work with Debian PPP scripts and Debian ip-{up,dow}.d
-    structure.
-  * Patches to let it connect to a PPP session not started by WMPPP (sent
-    upstream)
-  * Patches to pass it some things on the command line (programs to
-    excecute) (sent upstream)
-  * Patches for wmifs to let it work with arbitrary interfaces, not just
-    eth? and ppp0 (sent upstream)
+  * Modify to work with Debian PPP scripts and Debian ip-{up,dow}.d structure.
+  * Add patches to let it connect to a PPP session not started by WMPPP (sent
+    upstream).
+  * Add patches to pass it some things on the command line (programs to
+    excecute) (sent upstream).
+  * Add patches for wmifs to let it work with arbitrary interfaces, not just
+    eth? and ppp0 (sent upstream).
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Sat, 11 Apr 1998 16:44:31 -0600
 
