@@ -4,8 +4,7 @@
 	dh $@ --sourcedirectory=wmppp
 
 override_dh_auto_install:
-	install -m 755 wmppp/wmppp \
-		$(CURDIR)/debian/wmppp.app/usr/bin/wmppp
+#ignore upstream install target; use dh_install instead
 
 override_dh_installppp:
 	dh_installppp --name=00wmppp
