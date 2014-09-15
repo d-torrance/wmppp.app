@@ -8,7 +8,7 @@ Copyright: 1997-1998 Martijn Pieterse (pieterse@xs4all.nl)
 	   1997-1998 Antoine Nulle (warp@xs4all.nl)
 License: GPL-2
 
-Files: */debian
+Files: debian/*
 Copyright: 1998 Marcelo Magallon <mmagallo@debian.org>
 	   2014 Doug Torrance <dtorrance@monmouthcollege.edu>
 License: GPL-2
