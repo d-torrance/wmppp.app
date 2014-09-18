@@ -43,7 +43,7 @@ wmppp.app (1.3.0+20140915-1) unstable; urgency=medium
 
 wmppp.app (1.3.0-8) unstable; urgency=low
 
-  * Update build-dependencies for xlibs split (Closes: #346983).
+  * Update build dependencies for xlibs split (Closes: #346983).
   * Add patch from jguiton to display very high speeds with a "k" suffix
     (Closes: #328699).
 
@@ -51,7 +51,7 @@ wmppp.app (1.3.0-8) unstable; urgency=low
 
 wmppp.app (1.3.0-7) unstable; urgency=low
 
-  * Update for newer standards.
+  * Update Standards-Version in debian/control.
 
  -- Chris Waters <xtifr@debian.org>  Thu, 22 May 2003 21:15:37 -0700
 
@@ -59,7 +59,7 @@ wmppp.app (1.3.0-6) unstable; urgency=low
 
   * Re-add patches that got dropped on the floor when I switched to
     using CVS, including the all-important patch to use pon/poff by
-    default (Closes:#138939).
+    default (Closes: #138939).
 
  -- Chris Waters <xtifr@debian.org>  Mon, 18 Mar 2002 13:26:54 -0800
 
@@ -67,7 +67,7 @@ wmppp.app (1.3.0-5) unstable; urgency=low
 
   * Add some patches by Juan Cespedes <cespedes@debian.org> which may
     allow ISDN devices to be used.  Also include Juan's patches for
-    stampfile handling (Closes:#97509).
+    stampfile handling (Closes: #97509).
 
  -- Chris Waters <xtifr@debian.org>  Fri, 15 Mar 2002 19:17:41 -0800
 
@@ -79,7 +79,7 @@ wmppp.app (1.3.0-4) unstable; urgency=low
 
 wmppp.app (1.3.0-3) unstable; urgency=low
 
-  * Fix build-dependency on obsolete xpm4g-dev package (Closes:#92683).
+  * Fix build-dependency on obsolete xpm4g-dev package (Closes: #92683).
   * Rebuild against XFree86-4.
   * Move binary and man page out of X11R6 tree, as per new policy.
   * Change debian/rules to use the new dh_installman, and therefore added
@@ -121,14 +121,14 @@ wmppp.app (1.3.0-1) unstable; urgency=low
 
 wmppp.app (1.2p1-1) unstable; urgency=low
 
-  * New upstream version.
+  * New upstream release.
   * Redo the patch to parse configuration files.
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Sat,  2 May 1998 17:08:52 -0600
 
 wmppp.app (1.2-1) unstable; urgency=low
 
-  * New upstream version.
+  * New upstream release.
   * Some of the patches to 1.1 incorportated upstream.
   * Modify wmppp a bit to make it work with Debian PPP scripts.
   * Write real manpages for wmppp and wmifs.
@@ -139,7 +139,7 @@ wmppp.app (1.2-1) unstable; urgency=low
 
 wmppp.app (1.1-1) unstable; urgency=low
 
-  * Initial release
+  * Initial release.
   * Modify to work with Debian PPP scripts and Debian ip-{up,dow}.d structure.
   * Add patches to let it connect to a PPP session not started by WMPPP (sent
     upstream).
@@ -149,5 +149,3 @@ wmppp.app (1.1-1) unstable; urgency=low
     eth? and ppp0 (sent upstream).
 
  -- Marcelo E. Magallon <mmagallo@debian.org>  Sat, 11 Apr 1998 16:44:31 -0600
-
-

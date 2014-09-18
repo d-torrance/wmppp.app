@@ -15,4 +15,3 @@ get-orig-source:
 		rename -fv "s/wmppp.app-(.+)\.download/wmppp.app_\1\.orig\.tar\.gz/" \
 			../wmppp.app-*.download; \
 	fi
-
