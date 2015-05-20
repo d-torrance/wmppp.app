@@ -4,7 +4,7 @@
 	dh $@
 
 override_dh_auto_install:
-#ignore upstream install target; use dh_install instead
+	dh_auto_install -- PREFIX=/usr
 
 override_dh_installppp:
 	dh_installppp --name=00wmppp
