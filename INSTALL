@@ -21,15 +21,14 @@ Requirements
 Installation
 --------------------------------------------------------------
 1) % tar -zxvf wmppp-1.x.x-tar.gz
-2) % cd wmppp.app/
-3) % make all
-4) % su root
-5) # make install
-6) # vi ~/.wmppprc
+2) % make all
+3) % su root
+4) # make install
+5) # vi ~/.wmppprc
 	 set up the paths to your ppp start,
 	 stop & restart scripts
 
-7) % wmppp & (try 'wmppp -h &' for help)
+6) % wmppp & (try 'wmppp -h &' for help)
 
 
 Extra Install Info For Site Administrators!
@@ -39,8 +38,9 @@ up pppd's configuration files, but do want them to be able
 to make a dialup connection, a sample system.rc file is
 included (system.wmppprc), please take a look at it!
 
-The installation will install standard rc files in $HOME
-and /etc/ WITHOUT the 'force' option!
+The installation will install a standard rc file in /etc
+WITHOUT the 'force' option!  You can also create one in
+$HOME (~/.wmpprc).
 
 How it works:
 
@@ -76,7 +76,9 @@ General Notes
 Note 1: If "make install" fails on your system, please edit
         the Makefile to set the paths according to your setup.
         Make install defaults to /usr/local/bin & /etc/ppp/.
+	You may also change these directories using the various
+	variables, e.g., make PREFIX=/usr.
 
 Note 2: Please DO read the HINTS, this file contains some
-        very usefull tips and hints about WMPPP.
+        very useful tips and hints about WMPPP.
 

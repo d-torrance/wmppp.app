@@ -1,6 +1,6 @@
-/* dock.c- built-in Dock module for WindowMaker
+/*  wmgeneral miscellaneous functions
  *
- *  WindowMaker window manager
+ *  from dock.c - built-in Dock module for WindowMaker window manager
  *
  *  Copyright (c) 1997 Alfredo K. Kojima
  *
@@ -16,11 +16,13 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *  USA.
  */
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "list.h"
 #include "misc.h"
 
@@ -63,6 +65,10 @@ next_token(char *word, char **next)
     int state, ctype;
 
     t = ret = malloc(strlen(word)+1);
+    if (ret == NULL) {
+	    fprintf(stderr, "Insufficient memory.\n");
+	    exit(EXIT_FAILURE);
+    }
     ptr = word;
 
     state = 0;
@@ -160,5 +166,6 @@ execCommand(char *command)
         execvp(argv[0], args);
         exit(10);
     }
+    free(argv);
     return pid;
 }
