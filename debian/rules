@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --sourcedirectory=wmppp
+	dh $@
 
 override_dh_auto_install:
 #ignore upstream install target; use dh_install instead
