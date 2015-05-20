@@ -1,0 +1,3 @@
+start: "/usr/bin/pon"
+stop: "/usr/bin/poff"
+ifdown: "/usr/bin/poff -r"
