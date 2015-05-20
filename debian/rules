@@ -10,8 +10,8 @@ override_dh_installppp:
 	dh_installppp --name=00wmppp
 
 get-orig-source:
-	uscan --verbose --force-download
+	uscan --verbose --force-download --no-symlink
 	@if test -e ../wmppp.app-*.download ; then \
-		rename -fv "s/wmppp.app-(.+)\.download/wmppp.app_\1\.orig\.tar\.gz/" \
+		rename -f -v "s/wmppp.app-(.+)\.download/wmppp.app_\1\.orig\.tar\.gz/" \
 			../wmppp.app-*.download; \
 	fi
