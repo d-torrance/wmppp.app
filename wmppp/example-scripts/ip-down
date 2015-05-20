@@ -1,4 +1,0 @@
-#!/bin/sh
-# ip-down
-/sbin/route delete default
-
