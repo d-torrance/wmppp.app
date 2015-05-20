@@ -8,20 +8,20 @@ Description: Get number from getmodemspeed.
  declaration of p to avoid unused variable compiler warning.
 Author: Marcelo E. Magallon <mmagallo@debian.org>
 Author: Doug Torrance <dtorrance@monmouthcollege.edu>
-Last-Update: 2014-09-15
+Last-Update: 2015-05-20
 
---- a/wmppp/wmppp.c
-+++ b/wmppp/wmppp.c
-@@ -795,7 +795,7 @@
- 
- 	int		linespeed, i, k;
- 	FILE	*fp;
--	char	*p;
-+//	char	*p;
- 	char	temp[128];
- 
+--- a/wmppp.c
++++ b/wmppp.c
+@@ -847,7 +847,7 @@
  	fp = popen(speed_action, "r");
-@@ -808,9 +808,12 @@
+ 
+ 	if (fp) {
+-		char *p;
++		/* char *p; */
+ 		char temp[128];
+ 		int i, linespeed;
+ 
+@@ -858,9 +858,12 @@
  
  		pclose(fp);
  
