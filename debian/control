@@ -9,7 +9,7 @@ Vcs-Browser: https://github.com/d-torrance/wmppp.app
 Vcs-Git: https://github.com/d-torrance/wmppp.app.git
 
 Package: wmppp.app
-Architecture: any
+Architecture: linux-any
 Depends: ppp, ${shlibs:Depends}, ${misc:Depends}
 Suggests: wmaker
 Description: PPP dial control and network load monitor w/ NeXTStep look
