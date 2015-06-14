@@ -3,7 +3,7 @@ wmppp.app (1.3.1-1) unstable; urgency=medium
   * New upstream release.
     - Reread configuration file on SIGHUP or connect (Closes: #50181).
     - Add new command line options (Closes: #293839).
-    - Fix segfault when HOME undefined (Closes: #716472).
+    - Fix segfault when HOME is undefined (Closes: #716472).
     - New version of wmgeneral library builds with gcc5 (Closes: #778172).
   * debian/control
     - Bump Standards-Version to 3.9.6; no changes required.
